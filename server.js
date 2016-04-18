@@ -9,8 +9,16 @@ var fs = require("fs");
 
 function renderHomePage(request, response) {
 	response.writeHead(200,{"content-type": "text/html"});
+	// why are we making this a global variable?
 	homePageHtml = fs.readFileSync("homePage.html");
 	response.write(homePageHtml);
+	response.end();
+}
+
+function renderAboutPage(request, response) {
+	response.writeHead(200,{"content-type": "text/html"});
+	aboutPageHtml = fs.readFileSync("aboutPage.html");
+	response.write(aboutPageHtml);
 	response.end();
 }
 
@@ -30,6 +38,8 @@ var server = http.createServer(function(request, response) {
 	// console.log(request.url);
 	if (request.url == "/") {
 		renderHomePage(request, response);
+	} else if (request.url == '/about-rocks') {
+		renderAboutPage(request, response);
 	} else {
 		renderErrorPage(request, response);
 	}
