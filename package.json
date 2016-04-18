@@ -1,0 +1,15 @@
+{
+  "name": "node101",
+  "version": "1.0.0",
+  "description": "a practice node app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "node.js"
+  ],
+  "author": "Keith D. Moore",
+  "license": "ISC"
+}
